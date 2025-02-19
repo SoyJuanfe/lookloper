@@ -1,6 +1,5 @@
 import React from "react";
 import { Link } from "react-router-dom"; // Importar Link para la navegación
-import "./Polos.css";
 import polo1 from "../img/polo-1.jpeg";
 import polo2 from "../img/polo-2.jpeg";
 import polo3 from "../img/polo-3.jpeg";
