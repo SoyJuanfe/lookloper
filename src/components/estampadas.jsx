@@ -1,6 +1,6 @@
 import React, { useState } from "react";
 import { Link } from "react-router-dom";
-import "./Estampadas.css";
+
 import estampadita from "../img/estampadita.jpeg";
 import estampadita1 from "../img/estampadita1.jpeg";
 import estampadita2 from "../img/estampadita2.jpeg";
