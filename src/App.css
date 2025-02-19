@@ -1,0 +1,249 @@
+
+.hol {
+  background-color: black;
+}
+
+.titulo {
+  display: flex;
+  justify-content: center;
+  font-size: 80px;
+  font-family: 'Lucida Sans', 'Lucida Sans Regular', 'Lucida Grande', 'Lucida Sans Unicode', Geneva, Verdana, sans-serif;
+  color: white;
+}
+
+@media (min-width: 300px) and (max-width:1024px) {
+  .titulo {
+    font-size: 60px;
+}
+}
+
+
+.raya-negra {
+  width: 1910px;
+  height: 80px;
+  background-color: white;
+}
+
+.texto-raya {
+  display: flex;
+  justify-content: space-around;
+  color: black;
+  font-size: 30px;
+  font-family: 'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif;
+}
+
+@media (min-width: 300px) and (max-width:1024px) {
+  .texto-raya {
+    display: flex;
+    justify-content: start;
+    gap: 24px;
+}
+}
+
+.palabras {
+  margin-top: 17px;
+  font-family: 'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif;
+  font-size: 30px;
+}
+
+.modelos {
+  display: flex;
+  justify-content: space-around;
+}
+@media (min-width: 300px) and (max-width:1024px) {
+  .modelos {
+    display: grid;
+  }
+}
+
+.cuadros {
+  width: 360px;
+  height: 440px;
+  background-color: white;
+  border: 2px solid gray;
+  margin-top: 50px;
+  -webkit-box-shadow: 3px 10px 41px 7px rgba(0,0,0,0.43);
+-moz-box-shadow: 3px 10px 41px 7px rgba(0,0,0,0.43);
+box-shadow: 3px 10px 41px 7px rgba(0,0,0,0.43);
+}
+
+.nombre {
+  display: flex;
+  justify-content: center;
+  margin-top: 20px;
+  font-size: 24px;
+  font-family: 'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif;
+  color: black;
+}
+
+.image {
+  width: 260px;
+  height: 300px;
+  border-radius: 20px;
+  margin: 20px 0 0 45px;
+}
+
+.final {
+  margin-top: 60px;
+  background-color: black;
+  width: 1910px;
+  height: 200px;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  border: 3px solid gray;
+}
+
+@media (min-width: 300px) and (max-width:1024px) {
+  .final {
+    display: flex;
+    justify-content: start;
+    gap: 10px;
+}
+}
+
+.loo {
+  color: white;
+  font-size: 30px;
+  font-family: 'Gill Sans', 'Gill Sans MT', Calibri, 'Trebuchet MS', sans-serif;
+  margin: 0 0 0 20px;
+}
+
+.titulo-1 {
+  color: white;
+  font-size: 30px;
+  margin: 0 0 0 20px;
+  font-family: Verdana, Geneva, Tahoma, sans-serif;
+}
+
+.redes {
+  color: white;
+  margin: 6px 0 0 20px;
+  font-size: 20px;
+  font-family: Cambria, Cochin, Georgia, Times, 'Times New Roman', serif;
+}
+
+.ig {
+  display: flex;
+  align-items: center;
+}
+
+.insta {
+  margin: 10px 0 0 20px;
+}
+
+.nombre-ig {
+  color: white;
+  font-size: 20px;
+  margin: 10px 0 0 6px;
+  font-family: Georgia, 'Times New Roman', Times, serif;
+}
+
+.nombre-wp {
+  color: white;
+  font-size: 20px;
+  margin: 7px 0 0 6px;
+}
+
+.what {
+  margin: 10px 0 0 20px;
+}
+
+.derecho-autor {
+  color: white;
+  font-size: 16px;
+}
+
+.letra {
+  color: white;
+}
+
+
+.footer-menu {
+  display: flex;
+  justify-content: center;
+  gap: 20px;
+  padding: 10px;
+  background-color: #222;
+}
+
+.footer-link {
+  color: white;
+  text-decoration: none;
+  font-size: 16px;
+}
+
+.footer-info, .footer-contacto {
+  text-align: center;
+  color: white;
+  padding: 10px;
+}
+
+.redes {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+  justify-content: center;
+}
+
+.icono {
+  width: 24px;
+  height: 24px;
+}
+
+.Title {
+  color: white;
+}
+
+/* Título grande negro arriba */
+.titulo-principal {
+  background-color: black;
+  color: white;
+  text-align: center;
+  font-size: 4rem;
+  font-weight: bold;
+  padding: 20px 0;
+}
+
+/* Título en el footer (blanco) */
+.footer-title {
+  background-color: white;
+  color: black;
+  text-align: center;
+  font-size: 3rem;
+  font-weight: bold;
+  padding: 20px 0;
+}
+
+.inico {
+  background-color: black;
+  color: white;
+  margin-top: 20px;
+  width: 1897px;
+  height: 80px;
+  display: flex;
+  justify-content: center;
+}
+
+@media (min-width: 300px) and (max-width:1024px) {
+  .inico {
+    width: 420px;
+    display: flex;
+    justify-content: center;
+    gap: 10px;
+}
+}
+
+.let {
+  margin-top: 20px;
+  display: flex;
+  justify-content: center;
+  font-size: 30px;
+  font-family: Cambria, Cochin, Georgia, Times, 'Times New Roman', serif;
+}
+
+@media (min-width: 300px) and (max-width:1024px) {
+  .let1 {
+    font-size: 24px;
+}
+}
