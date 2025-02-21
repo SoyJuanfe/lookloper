@@ -75,6 +75,7 @@ const Estampadas = () => {
         <Link to="/" className="inic"><h1 className="let1">INICIO</h1></Link>
         <h1 className="cami-estan">CAMISETAS ESTAMPADAS</h1>
       </div>
+
       {filasDeEstampadas.map((fila, index) => (
         <div className="orden-camisetas" key={index}>
           {fila.map((camiseta, subIndex) => (
@@ -87,9 +88,11 @@ const Estampadas = () => {
           ))}
         </div>
       ))}
+
       <div className="inico">
         <Link to="/"><h1 className="let">VOLVER A INICIO</h1></Link>
       </div>
+      
       {selectedCamiseta && (
         <div className="modal">
           <div className="modal-content">

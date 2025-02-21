@@ -121,7 +121,7 @@ const Polos = () => {
       <div className="raya-negra1">
         <div>
           <Link to="/" className="inic">
-            <h1 >INICIO</h1>
+            <h1 className="let1">INICIO</h1>
           </Link>
         </div>
         <div>

@@ -2,10 +2,10 @@ import './App.css';
 import { Link, Routes, Route } from 'react-router-dom';
 import instagra from './img/instagra.png';
 import wasa from './img/whatsapp.png';
-import polo from './img/polo.jpg';
 import oversize from './img/oversize.jpeg';
 import basica from './img/basica.jpeg';
 import estampada from './img/estampada.jpeg';
+import polod from "./img/polod.jpg";
 
 // Importar páginas individuales
 import Estampadas from './components/estampadas';
@@ -36,10 +36,9 @@ const Home = () => {
       {/* Menú de navegación */}
       <nav className='raya-negra'>
         <div className='texto-raya'>
-          <Link to="/" className='palabras'><h1>Inicio</h1></Link>
+          <Link to="/" className='palabras'><h1 className='ini'>Inicio</h1></Link>
           <Link to="/" className='palabras'><h1>Catálogo</h1></Link>
           <Link to="/descuentos" className='palabras'><h1>Descuentos</h1></Link>
-          <Link to="/sobre-nosotros" className='palabras'><h1>Sobre Nosotros</h1></Link>
         </div>
       </nav>
 
@@ -49,7 +48,7 @@ const Home = () => {
           { nombre: "CAMISETAS ESTAMPADAS", img: estampada, link: "/estampadas" },
           { nombre: "CAMISETAS OVERSIZE", img: oversize, link: "/oversize" },
           { nombre: "CAMISETAS BÁSICAS", img: basica, link: "/basicas" },
-          { nombre: "CAMISAS POLOS", img: polo, link: "/polos" }
+          { nombre: "CAMISAS POLOS", img: polod, link: "/polos" }
         ].map((item, index) => (
           <div className='cuadros' key={index}>
             <Link to={item.link}>
@@ -69,7 +68,7 @@ const Home = () => {
           <h2>Redes Sociales</h2>
           <div className="redes">
             <img className="icono" src={instagra} alt="Instagram" />
-            <span>@lookleper</span>
+            <span>@lookleper_</span>
           </div>
           <div className="redes">
             <img className="icono" src={wasa} alt="WhatsApp" />

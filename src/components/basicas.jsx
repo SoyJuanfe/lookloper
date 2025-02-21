@@ -1,5 +1,6 @@
-import React from "react";
+import React, { useState }  from "react";
 import { Link } from "react-router-dom";
+
 import basica1 from '../img/basica1.jpeg';
 import basica2 from '../img/basica2.jpeg';
 import basica3 from '../img/basica3.jpeg';
@@ -64,7 +65,7 @@ import basica61 from '../img/basica61.webp';
 import basica62 from '../img/basica62.webp';
 
 
-const camisetas = [
+const basicas = [
     { img: basica1, nombre: "CAMISETA CREMA", precio: "$100.000" },
     { img: basica2, nombre: "CAMISETA BLANCA", precio: "$100.000" },
     { img: basica3, nombre: "CAMISETA SAND", precio: "$100.000" },
@@ -137,24 +138,24 @@ const dividirEnFilas = (array, tamañoFila) => {
 };
 
 const Basicas = () => {
-  const filasDeCamisetas = dividirEnFilas(camisetas, 4); // Dividir en filas de 4
-
+  const filasDeBasicas = dividirEnFilas(basicas, 4); // Dividir en filas de 4
+   const [selectedCamiseta, setSelectedCamiseta] = useState(null);
   return (
     <div>
       <div><h1 className="titulo1">LOOKLEPER</h1></div>
 
       <div className="raya-negra1">
         <div>
-          <Link to="/" className="inic"><h1 >INICIO</h1></Link>
+          <Link to="/" className="inic"><h1 className="let1">INICIO</h1></Link>
         </div>
         <div><h1 className="cami-estan">CAMISETAS BÁSICAS</h1></div>
       </div>
 
       {/* Mostrar las filas dinámicamente */}
-      {filasDeCamisetas.map((fila, index) => (
+      {filasDeBasicas.map((fila, index) => (
         <div className="orden-camisetas" key={index}>
           {fila.map((camiseta, subIndex) => (
-            <div key={subIndex} className="forma-camisetas">
+            <div key={subIndex} className="forma-camisetas" onClick={() => setSelectedCamiseta(camiseta)}>
               <div><img className="ima" src={camiseta.img} alt={camiseta.nombre} /></div>
               <div><h1 className="nombre-camiseta">{camiseta.nombre}</h1></div>
               <div><h1 className="precio-camiseta">{camiseta.precio}</h1></div>
@@ -170,6 +171,20 @@ const Basicas = () => {
                 </Link>
               </div>
               </div>
+
+              {selectedCamiseta && (
+        <div className="modal">
+          <div className="modal-content">
+            <span className="close" onClick={() => setSelectedCamiseta(null)}>&times;</span>
+            <img src={selectedCamiseta.img} alt="Frontal" className="modal-img" />  
+              
+            <h2 className="letra-diseño">{selectedCamiseta.nombre}</h2>
+            <h3>{selectedCamiseta.precio}</h3> 
+                   
+          </div>
+        </div>
+      )} 
+
     </div>
   );
 };
