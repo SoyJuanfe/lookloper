@@ -1,5 +1,6 @@
-import React from "react";
-import { Link } from "react-router-dom"; // Importar Link para la navegación
+import React, { useState } from "react"; // Importar Link para la navegación
+import { Link } from "react-router-dom";
+
 import polo1 from "../img/polo-1.jpeg";
 import polo2 from "../img/polo-2.jpeg";
 import polo3 from "../img/polo-3.jpeg";
@@ -51,54 +52,54 @@ import polo48 from "../img/polo48.jpg";
 
 // Lista de camisetas tipo polo con precios diferentes
 const polos = [
-  { img: polo1, nombre: "CAMISETA BLANCA", precio: "$100.000" },
-  { img: polo2, nombre: "CAMISETA MORADA", precio: "$100.000" },
-  { img: polo3, nombre: "CAMISETA NEGRA", precio: "$100.000" },
-  { img: polo4, nombre: "CAMISETA BLANCA", precio: "$100.000" },
-  { img: polo5, nombre: "CAMISETA NEGRA", precio: "$100.000" },
-  { img: polo6, nombre: "CAMISETA AZUL CLARO", precio: "$100.000" },
-  { img: polo7, nombre: "CAMISETA AZUL NAVY", precio: "$100.000" },
-  { img: polo8, nombre: "CAMISETA KAKHI", precio: "$100.000" },
-  { img: polo9, nombre: "CAMISETA GRIS", precio: "$100.000" },
-  { img: polo10, nombre: "CAMISETA AZUL OSCURO", precio: "$100.000" },
-  { img: polo11, nombre: "CAMISETA BLANCA", precio: "$100.000" },
-  { img: polo12, nombre: "CAMISETA BLANCA", precio: "$100.000" },
-  { img: polo13, nombre: "CAMISETA ROJA", precio: "$100.000" },
-  { img: polo14, nombre: "CAMISETA VERDE", precio: "$100.000" },
-  { img: polo15, nombre: "CAMISETA NEGRA", precio: "$100.000" },
-  { img: polo16, nombre: "CAMISETA BLANCA", precio: "$100.000" },
-  { img: polo17, nombre: "CAMISETA VERDE GRISÁCEO", precio: "$100.000" },
-  { img: polo18, nombre: "CAMISETA VERDE", precio: "$100.000" },
-  { img: polo19, nombre: "CAMISETA AZUL", precio: "$100.000" },
-  { img: polo20, nombre: "CAMISETA AZUL", precio: "$100.000" },
-  { img: polo21, nombre: "CAMISETA KAKHI", precio: "$100.000" },
-  { img: polo22, nombre: "CAMISETA BLANCA", precio: "$100.000" },
-  { img: polo23, nombre: "CAMISETA AZUL", precio: "$100.000" },
-  { img: polo24, nombre: "CAMISETA VERDE", precio: "$100.000" },
-  { img: polo25, nombre: "CAMISETA NEGRA", precio: "$100.000" },
-  { img: polo26, nombre: "CAMISETA BLANCA", precio: "$100.000" },
-  { img: polo27, nombre: "CAMISETA VERDE TÉ", precio: "$100.000" },
-  { img: polo28, nombre: "CAMISETA GRIS-NEGRO", precio: "$100.000" },
-  { img: polo29, nombre: "CAMISETA AZUL", precio: "$100.000" },
-  { img: polo30, nombre: "CAMISETA FUCSIA", precio: "$100.000" },
-  { img: polo31, nombre: "CAMISETA GRIS", precio: "$100.000" },
-  { img: polo32, nombre: "CAMISETA GRIS", precio: "$100.000" },
-  { img: polo33, nombre: "CAMISETA APRICOT", precio: "$100.000" },
-  { img: polo34, nombre: "CAMISETA VERDE", precio: "$100.000" },
-  { img: polo35, nombre: "CAMISETA ROJA", precio: "$100.000" },
-  { img: polo36, nombre: "CAMISETA TURQUESA", precio: "$100.000" },
-  { img: polo37, nombre: "CAMISETA ROSA", precio: "$100.000" },
-  { img: polo38, nombre: "CAMISETA AZUL", precio: "$100.000" },
-  { img: polo39, nombre: "CAMISETA BLANCO", precio: "$100.000" },
-  { img: polo40, nombre: "CAMISETA VERDE", precio: "$100.000" },
-  { img: polo41, nombre: "CAMISETA AZUL", precio: "$100.000" },
-  { img: polo42, nombre: "CAMISETA BEIGE", precio: "$100.000" },
-  { img: polo43, nombre: "CAMISETA VERDE", precio: "$100.000" },
-  { img: polo44, nombre: "CAMISETA VERDE", precio: "$100.000" },
-  { img: polo45, nombre: "CAMISETA MAGENTA", precio: "$100.000" },
-  { img: polo46, nombre: "CAMISETA GRIS", precio: "$100.000" },
-  { img: polo47, nombre: "CAMISETA VERDE OSCURO", precio: "$100.000" },
-  { img: polo48, nombre: "CAMISETA AZUL OSCURO", precio: "$100.000" },
+  { img: polo1, nombre: "CAMISETA BLANCA", precio: "$100.000", descripcion: "Diseño único y tela de alta calidad." },
+  { img: polo2, nombre: "CAMISETA MORADA", precio: "$100.000", descripcion: "Diseño único y tela de alta calidad." },
+  { img: polo3, nombre: "CAMISETA NEGRA", precio: "$100.000", descripcion: "Diseño único y tela de alta calidad." },
+  { img: polo4, nombre: "CAMISETA BLANCA", precio: "$100.000", descripcion: "Diseño único y tela de alta calidad." },
+  { img: polo5, nombre: "CAMISETA NEGRA", precio: "$100.000", descripcion: "Diseño único y tela de alta calidad." },
+  { img: polo6, nombre: "CAMISETA AZUL CLARO", precio: "$100.000", descripcion: "Diseño único y tela de alta calidad." },
+  { img: polo7, nombre: "CAMISETA AZUL NAVY", precio: "$100.000", descripcion: "Diseño único y tela de alta calidad." },
+  { img: polo8, nombre: "CAMISETA KAKHI", precio: "$100.000", descripcion: "Diseño único y tela de alta calidad." },
+  { img: polo9, nombre: "CAMISETA GRIS", precio: "$100.000", descripcion: "Diseño único y tela de alta calidad." },
+  { img: polo10, nombre: "CAMISETA AZUL OSCURO", precio: "$100.000", descripcion: "Diseño único y tela de alta calidad." },
+  { img: polo11, nombre: "CAMISETA BLANCA", precio: "$100.000", descripcion: "Diseño único y tela de alta calidad." },
+  { img: polo12, nombre: "CAMISETA BLANCA", precio: "$100.000", descripcion: "Diseño único y tela de alta calidad." },
+  { img: polo13, nombre: "CAMISETA ROJA", precio: "$100.000", descripcion: "Diseño único y tela de alta calidad." },
+  { img: polo14, nombre: "CAMISETA VERDE", precio: "$100.000", descripcion: "Diseño único y tela de alta calidad." },
+  { img: polo15, nombre: "CAMISETA NEGRA", precio: "$100.000", descripcion: "Diseño único y tela de alta calidad." },
+  { img: polo16, nombre: "CAMISETA BLANCA", precio: "$100.000", descripcion: "Diseño único y tela de alta calidad." },
+  { img: polo17, nombre: "CAMISETA VERDE GRISÁCEO", precio: "$100.000", descripcion: "Diseño único y tela de alta calidad." },
+  { img: polo18, nombre: "CAMISETA VERDE", precio: "$100.000", descripcion: "Diseño único y tela de alta calidad." },
+  { img: polo19, nombre: "CAMISETA AZUL", precio: "$100.000", descripcion: "Diseño único y tela de alta calidad." },
+  { img: polo20, nombre: "CAMISETA AZUL", precio: "$100.000", descripcion: "Diseño único y tela de alta calidad." },
+  { img: polo21, nombre: "CAMISETA KAKHI", precio: "$100.000", descripcion: "Diseño único y tela de alta calidad." },
+  { img: polo22, nombre: "CAMISETA BLANCA", precio: "$100.000", descripcion: "Diseño único y tela de alta calidad." },
+  { img: polo23, nombre: "CAMISETA AZUL", precio: "$100.000", descripcion: "Diseño único y tela de alta calidad." },
+  { img: polo24, nombre: "CAMISETA VERDE", precio: "$100.000", descripcion: "Diseño único y tela de alta calidad." },
+  { img: polo25, nombre: "CAMISETA NEGRA", precio: "$100.000", descripcion: "Diseño único y tela de alta calidad." },
+  { img: polo26, nombre: "CAMISETA BLANCA", precio: "$100.000", descripcion: "Diseño único y tela de alta calidad." },
+  { img: polo27, nombre: "CAMISETA VERDE TÉ", precio: "$100.000", descripcion: "Diseño único y tela de alta calidad." },
+  { img: polo28, nombre: "CAMISETA GRIS-NEGRO", precio: "$100.000", descripcion: "Diseño único y tela de alta calidad." },
+  { img: polo29, nombre: "CAMISETA AZUL", precio: "$100.000", descripcion: "Diseño único y tela de alta calidad." },
+  { img: polo30, nombre: "CAMISETA FUCSIA", precio: "$100.000", descripcion: "Diseño único y tela de alta calidad." },
+  { img: polo31, nombre: "CAMISETA GRIS", precio: "$100.000", descripcion: "Diseño único y tela de alta calidad." },
+  { img: polo32, nombre: "CAMISETA GRIS", precio: "$100.000", descripcion: "Diseño único y tela de alta calidad." },
+  { img: polo33, nombre: "CAMISETA APRICOT", precio: "$100.000", descripcion: "Diseño único y tela de alta calidad." },
+  { img: polo34, nombre: "CAMISETA VERDE", precio: "$100.000", descripcion: "Diseño único y tela de alta calidad." },
+  { img: polo35, nombre: "CAMISETA ROJA", precio: "$100.000", descripcion: "Diseño único y tela de alta calidad." },
+  { img: polo36, nombre: "CAMISETA TURQUESA", precio: "$100.000", descripcion: "Diseño único y tela de alta calidad." },
+  { img: polo37, nombre: "CAMISETA ROSA", precio: "$100.000", descripcion: "Diseño único y tela de alta calidad." },
+  { img: polo38, nombre: "CAMISETA AZUL", precio: "$100.000", descripcion: "Diseño único y tela de alta calidad." },
+  { img: polo39, nombre: "CAMISETA BLANCO", precio: "$100.000", descripcion: "Diseño único y tela de alta calidad." },
+  { img: polo40, nombre: "CAMISETA VERDE", precio: "$100.000", descripcion: "Diseño único y tela de alta calidad." },
+  { img: polo41, nombre: "CAMISETA AZUL", precio: "$100.000", descripcion: "Diseño único y tela de alta calidad." },
+  { img: polo42, nombre: "CAMISETA BEIGE", precio: "$100.000", descripcion: "Diseño único y tela de alta calidad." },
+  { img: polo43, nombre: "CAMISETA VERDE", precio: "$100.000", descripcion: "Diseño único y tela de alta calidad." },
+  { img: polo44, nombre: "CAMISETA VERDE", precio: "$100.000", descripcion: "Diseño único y tela de alta calidad." },
+  { img: polo45, nombre: "CAMISETA MAGENTA", precio: "$100.000", descripcion: "Diseño único y tela de alta calidad." },
+  { img: polo46, nombre: "CAMISETA GRIS", precio: "$100.000", descripcion: "Diseño único y tela de alta calidad." },
+  { img: polo47, nombre: "CAMISETA VERDE OSCURO", precio: "$100.000", descripcion: "Diseño único y tela de alta calidad." },
+  { img: polo48, nombre: "CAMISETA AZUL OSCURO", precio: "$100.000", descripcion: "Diseño único y tela de alta calidad." }
 ];
 
 // Función para dividir polos en filas de 4
@@ -111,7 +112,7 @@ const dividirEnFilas = (array, tamañoFila) => {
 
 const Polos = () => {
   const filasDePolos = dividirEnFilas(polos, 4); // Dividir en filas de 4
-
+  const [selectedCamiseta, setSelectedCamiseta] = useState(null);
   return (
     <div>
       <div>
@@ -132,16 +133,16 @@ const Polos = () => {
       {/* Mostrar las filas dinámicamente */}
       {filasDePolos.map((fila, index) => (
         <div className="orden-camisetas" key={index}>
-          {fila.map((polo, subIndex) => (
-            <div key={subIndex} className="forma-camisetas">
+          {fila.map((camiseta, subIndex) => (
+            <div key={subIndex} className="forma-camisetas" onClick={() => setSelectedCamiseta(camiseta)}>
               <div>
-                <img className="ima" src={polo.img} alt={polo.nombre} />
+                <img className="ima" src={camiseta.img} alt={camiseta.nombre} />
               </div>
               <div>
-                <h1 className="nombre-camiseta">{polo.nombre}</h1>
+                <h1 className="nombre-camiseta">{camiseta.nombre}</h1>
               </div>
               <div>
-                <h1 className="precio-camiseta">{polo.precio}</h1>
+                <h1 className="precio-camiseta">{camiseta.precio}</h1>
               </div>
               <div>
                 <h1 className="iva">IVA incluido</h1>
@@ -158,6 +159,18 @@ const Polos = () => {
           </Link>
         </div>
         </div>
+
+        {selectedCamiseta && (
+        <div className="modal">
+          <div className="modal-content">
+            <span className="close" onClick={() => setSelectedCamiseta(null)}>&times;</span>
+            <img src={selectedCamiseta.img} alt="Frontal" className="modal-img" />
+            <h2 className="letra-diseño">{selectedCamiseta.nombre}</h2>
+            <h3>{selectedCamiseta.precio}</h3>
+            <p className="letra-diseño">{selectedCamiseta.descripcion}</p> 
+          </div>
+        </div>
+      )}
     </div>
     
   );
